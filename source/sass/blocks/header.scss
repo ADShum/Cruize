@@ -1,0 +1,138 @@
+.header {
+  background-color: #070707;
+  position: relative;
+
+  &.is-open {
+    @include vp-767 {
+      overflow: auto;
+      background-color: $color-default-white;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      left: 36px;
+      height: 100vh;
+      box-shadow: -36px 0 0 rgba(0, 43, 102, 0.5);
+      position: absolute;
+    }
+  }
+}
+
+.header__wpapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+}
+
+.header__image {
+  fill: $color-alice-blue;
+  width: 42px;
+  height: 22px;
+
+  @include vp-767 {
+    .is-open & {
+      fill: $color-default-black;
+      z-index: 99;
+    }
+  }
+}
+
+.header__link {
+  margin-top: 20px;
+  z-index: 1;
+}
+
+.header__button {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 24px;
+  height: 19px;
+  background-color: transparent;
+  color: $color-alice-blue;
+  cursor: pointer;
+  border: none;
+  margin-top: 25px;
+  margin-left: auto;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: $color-default-white;
+    box-shadow: 0 6.5px 0 0 $color-default-white,
+      0 12.5px 0 0 $color-default-white;
+  }
+
+  &::after {
+    display: none;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 1.5px;
+    background-color: transparent;
+  }
+
+  .is-open & {
+    width: 24px;
+    height: 19px;
+  }
+
+  .is-open &::before {
+    top: 9px;
+    left: 10px;
+    width: 18px;
+    height: 2px;
+    transform: rotate(45deg);
+    box-shadow: none;
+    background-color: $color-tangaroa;
+  }
+
+  .is-open &::after {
+    display: block;
+    width: 18px;
+    left: 10px;
+    height: 2px;
+    transform: rotate(-45deg);
+    background-color: $color-tangaroa;
+  }
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+@media (min-width: $vp-768) {
+  .header__image {
+    width: 38px;
+    height: 20px;
+  }
+
+  .header__link {
+    margin-top: 30px;
+  }
+
+  .header__button {
+    display: none;
+  }
+}
+
+@media (min-width: $vp-1024) {
+  .header__image {
+    width: 70px;
+    height: 38px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
+import {initMenu} from './modules/menu';
+import {smoothScroll} from './utils/scroll';
 
 // ---------------------------------
 
@@ -10,6 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
+  initMenu();
+  smoothScroll();
 
   // Modules
   // ---------------------------------
@@ -23,6 +27,10 @@ window.addEventListener('DOMContentLoaded', () => {
     form.init();
   });
 });
+
+let map = document.querySelector('.map');
+
+map.classList.remove('map--nojs');
 
 // ---------------------------------
 

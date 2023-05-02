@@ -1,0 +1,130 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  color: $color-alice-blue;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 13px 13px 12px;
+}
+
+.form__control {
+  margin-bottom: 20px;
+}
+
+.form__agreement {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.form__checkbox-input-text {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: $color-alice-blue;
+  padding-left: 29px;
+}
+
+.form__checkbox-input-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: $color-alice-blue;
+}
+
+.form__input--checkbox:checked + .form__checkbox-input-icon::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 9px;
+  background-image: url("../img/arrow.svg");
+  top: 35%;
+  left: 20%;
+}
+
+.form__btn {
+  margin-top: 26px;
+  padding: 10px 40px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  justify-content: center;
+}
+
+@media (min-width: $vp-768) {
+  .form .is-invalid input[type="checkbox"] + .form__checkbox-input-icon {
+    background-color: #ff0000;
+  }
+
+  [data-message-base="Поле обязательно к заполнению"] .is-invalid {
+    color: #ff0000;
+  }
+
+  .form__title {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: start;
+    padding-left: 18px;
+  }
+
+  .form__control {
+    align-self: center;
+  }
+
+  .form__input {
+    width: 303px;
+  }
+
+  .form__agreement {
+    align-self: center;
+  }
+
+  .form__checkbox-input-text {
+    line-height: 13px;
+    padding-left: 25px;
+  }
+
+  .form__checkbox-input-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .form__btn {
+    margin-top: 33px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: $vp-1024) {
+  .form__input {
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  .form__title {
+    margin-bottom: 30px;
+  }
+}

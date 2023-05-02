@@ -1,10 +1,12 @@
 .btn {
   display: inline-flex;
-  padding: 10px 20px;
-
-  color: $color-default-white;
-
-  background-color: $color-neon-blue;
+  padding: 14px 61px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-tangaroa;
+  user-select: none;
+  background-color: $color-alice-blue;
   border: none;
   cursor: pointer;
 
@@ -21,6 +23,12 @@
   }
 
   @include hover-focus {
+    opacity: 0.8;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
     opacity: 0.8;
   }
 }
