@@ -30,7 +30,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 let map = document.querySelector('.map');
 
-map.classList.remove('map--nojs');
+if (map) {
+  map.classList.remove('map--nojs');
+}
+
 
 // ---------------------------------
 
