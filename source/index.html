@@ -35,10 +35,10 @@
       crossorigin="anonymous"
       type="font/woff2"
     />
-    <link rel="icon" href="./img/favicons/favicon.ico" />
-    <link rel="icon" href="./img/favicons/32.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="./img/favicons/180.png" />
-    <link rel="manifest" href="./img/favicons/manifest.webmanifest" />
+    <link rel="icon" href="./img/favicons/favicon.ico"/>
+    <link rel="icon" href="./img/favicons/32.svg" type="image/svg+xml"/>
+    <link rel="apple-touch-icon" href="./img/favicons/180.png"/>
+    <link rel="manifest" href="./img/favicons/manifest.webmanifest"/>
   </head>
   <body>
     <div class="wrapper">
@@ -137,10 +137,10 @@
         <section class="about">
           <div class="about__wrapper container">
             <div class="about__text">
-              <h2 class="about__title title">
+              <h2>
                 Путешествие на&nbsp;край&nbsp;Земли
               </h2>
-              <p class="about__description">
+              <p>
                 Это волшебное путешествие поможет вам познакомиться поближе
                 с&nbsp;удивительным миром Антарктики. Наш круизный лайнер
                 отвезет вас на&nbsp;край Земли, где вы сможете увидеть: ледяные
@@ -272,7 +272,7 @@
                 </h3>
                 <p class="benefits__description benefits__description--boat">
                   Все наши круизы работают по системе&nbsp;Все Включено&raquo;.
-                  Великолепные&nbsp;блюда&nbsp;и&nbsp;безлимитный
+                  Великолепные&nbsp;блюда и&nbsp;безлимитный
                   бар&nbsp;доступны для вас 24&nbsp;часа.
                 </p>
               </li>
@@ -896,22 +896,21 @@
               </p>
             </div>
             <div
-              class="booking__form-wrapper"
+              class="booking__form-wrapper form"
               data-form-validate
               data-callback="base"
             >
               <form
-                class="booking__form form"
                 method="post"
                 action="https://echo.htmlacademy.ru"
               >
-                <h3 class="form__title">
+                <h3>
                   Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами
                   в&nbsp;ближайшее время
                 </h3>
-                <label
+                <div class="form__control form__control--name">
+                  <label
                   data-validate-type="text"
-                  class="form__control form__control--name"
                   data-required
                   data-message-base="Поле обязательно к заполнению"
                 >
@@ -919,16 +918,16 @@
                     >Поле для ввода Вашего имени</span
                   >
                   <input
-                    class="form__input"
                     type="text"
                     name="name"
                     placeholder="Имя"
                     required
                   />
                 </label>
-                <label
+                </div>
+                <div class="form__control form__control--phone">
+                  <label
                   data-validate-type="phone"
-                  class="form__control form__control--phone"
                   data-required
                   data-message-base="Поле обязательно к заполнению"
                 >
@@ -936,16 +935,16 @@
                     >Поле для ввода Вашего номера мобильного телефона</span
                   >
                   <input
-                    class="form__input"
                     type="tel"
                     name="phone"
                     placeholder="Телефон"
                     required
                   />
                 </label>
-                <label
+                </div>
+                <div class="form__control form__control--email">
+                  <label
                   data-validate-type="email"
-                  class="form__control form__control--phone"
                   data-required
                   data-message-base="Поле обязательно к заполнению"
                 >
@@ -953,15 +952,15 @@
                     >Поле для ввода Вашего адреса электронной почты</span
                   >
                   <input
-                    class="form__input"
                     type="email"
                     name="email"
                     placeholder="Email"
                     required
                   />
                 </label>
-                <label
-                  class="form__agreement"
+                </div>
+                <div class="form__agreement">
+                  <label
                   data-validate-type="checkbox"
                   data-required
                 >
@@ -969,7 +968,6 @@
                     >Поле согласия на обработку персональных даннных</span
                   >
                   <input
-                    class="form__input form__input--checkbox visually-hidden"
                     type="checkbox"
                     name="agreement"
                     checked
@@ -980,6 +978,7 @@
                     >Я согласен на обработку моих&nbsp;персональных данных</span
                   >
                 </label>
+                </div>
                 <button class="form__btn btn" type="submit">
                   Оставить заявку
                 </button>

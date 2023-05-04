@@ -1,5 +1,6 @@
 .navigation {
   position: relative;
+  width: 100%;
 }
 
 .navigation__wrapper {
@@ -28,6 +29,7 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .navigation__link {
@@ -40,6 +42,7 @@
 @media (min-width: $vp-768) {
   .navigation {
     z-index: 1;
+    width: auto;
   }
 
   .navigation__wrapper {
@@ -49,6 +52,7 @@
   .navigation__list {
     width: 510px;
     margin-top: 30px;
+    flex-direction: row;
   }
 
   .navigation__item {

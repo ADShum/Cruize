@@ -1,10 +1,12 @@
-.form {
+form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  padding: 38px 30px 41px;
+  background-color: $color-tangaroa;
 }
 
-.form__title {
+.form h3 {
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;
@@ -13,7 +15,7 @@
   margin-bottom: 25px;
 }
 
-.form__input {
+input {
   width: 100%;
   border: none;
   outline: none;
@@ -22,9 +24,47 @@
 
 .form__control {
   margin-bottom: 20px;
+
+  &.is-invalid {
+    input,
+    textarea {
+      border: 2px solid #ff1553;
+
+      &:focus,
+      &:hover {
+        border: 2px solid rgba(#ff1553, 0.5);
+      }
+    }
+  }
+
+  &.is-valid {
+    input {
+      border: 2px solid #22b259;
+
+      &:focus,
+      &:hover {
+        border: 2px solid rgba(#22b259, 0.5);
+      }
+    }
+  }
+
+  .input-message {
+    position: absolute;
+    font-size: 10px;
+    line-height: 13px;
+    left: 235px;
+
+    &.is-invalid {
+      color: #ff0000;
+    }
+
+    &.is-valid {
+      color: #15ab07;
+    }
+  }
 }
 
-.form__agreement {
+.form__agreement label {
   display: flex;
   position: relative;
   cursor: pointer;
@@ -34,6 +74,19 @@
   &:active {
     opacity: 0.5;
   }
+}
+
+.form__agreement input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
 }
 
 .form__checkbox-input-text {
@@ -51,7 +104,7 @@
   background-color: $color-alice-blue;
 }
 
-.form__input--checkbox:checked + .form__checkbox-input-icon::after {
+input[type="checkbox"]:checked + .form__checkbox-input-icon::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -71,15 +124,16 @@
 }
 
 @media (min-width: $vp-768) {
-  .form .is-invalid input[type="checkbox"] + .form__checkbox-input-icon {
+  .is-invalid input[type="checkbox"] + .form__checkbox-input-icon {
     background-color: #ff0000;
   }
 
-  [data-message-base="Поле обязательно к заполнению"] .is-invalid {
-    color: #ff0000;
+  form {
+    padding-top: 48px;
+    padding-bottom: 50px;
   }
 
-  .form__title {
+  .form h3 {
     font-size: 18px;
     line-height: 27px;
     text-align: start;
@@ -90,7 +144,7 @@
     align-self: center;
   }
 
-  .form__input {
+  input {
     width: 303px;
   }
 
@@ -116,7 +170,7 @@
 }
 
 @media (min-width: $vp-1024) {
-  .form__input {
+  input {
     &:hover,
     &:focus,
     &:active {
@@ -124,7 +178,11 @@
     }
   }
 
-  .form__title {
+  .form h3 {
     margin-bottom: 30px;
+  }
+
+  form {
+    padding-top: 40px;
   }
 }

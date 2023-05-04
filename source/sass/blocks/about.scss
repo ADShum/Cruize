@@ -1,18 +1,19 @@
 .about__wrapper {
   padding: 58px 16px 85px;
-  display: flex;
+  display: grid;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.about__title {
+.about__text h2 {
   font-weight: 600;
   font-size: 24px;
   line-height: 34px;
   margin-bottom: 16px;
+  color: $color-tangaroa;
 }
 
-.about__description {
+.about__text p {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -30,15 +31,15 @@
   .about__wrapper {
     display: grid;
     padding: 95px 45px 50px;
-    grid-template-columns: 324px 324px;
+    grid-template-columns: 1fr 1fr;
     column-gap: 30px;
   }
 
   .about__image {
-    height: 174px;
+    height: auto;
   }
 
-  .about__title {
+  .about__text h2 {
     font-size: 26px;
     line-height: 36px;
   }
@@ -57,7 +58,7 @@
     width: 100%;
   }
 
-  .about__title {
+  .about__text h2 {
     font-size: 28px;
     line-height: 42px;
     padding-bottom: 25px;
@@ -65,7 +66,7 @@
     padding-top: 10px;
   }
 
-  .about__description {
+  .about__text p {
     margin: 0;
   }
 }

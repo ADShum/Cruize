@@ -3,6 +3,7 @@
   display: flex;
   min-height: 555px;
   padding: 59px 0 65px;
+  background-color: #51509b;
 }
 
 .booking__image {
@@ -50,10 +51,6 @@
   width: 290px;
 }
 
-.booking__form {
-  padding: 38px 30px 41px;
-  background-color: $color-tangaroa;
-}
 
 @media (min-width: $vp-768) {
   .booking {
@@ -65,10 +62,6 @@
     width: 403px;
   }
 
-  .booking__form {
-    padding-top: 48px;
-    padding-bottom: 50px;
-  }
 
   .booking__description {
     max-width: 352px;
@@ -115,9 +108,5 @@
 
   .booking__form-wrapper {
     margin-left: 115px;
-  }
-
-  .booking__form {
-    padding-top: 40px;
   }
 }
